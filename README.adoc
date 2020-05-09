@@ -1,0 +1,32 @@
+= Criptografía
+:toc: macro
+:sectnumlevels: 4
+
+La criptografía es un conjunto de técnicas, métodos y algoritmos que tienen como objetivo tradicional cifrar mensajes para hacerlos ininteligibles para quien no debe leerlos. Ademas tiene cuatro pilares basicos
+
+* *Confidencialidad*: Sabemos que la información únicamente es accesible por aquellos a los que va dirigida.
+* *Integridad*: Sabemos que la información es correcta y no ha sido modificada por terceros.
+* *Autenticidad*: El remitente de la información tiene una identidad que puede ser verificada.
+* *No rechazo/Vinculación*: Sabemos que el creador de la información es el remitente no siendo posible que haya sido un tercero.
+
+toc::[]
+
+== Conceptos básicos
+
+* *Texto plano*: Son los datos antes de ser cifrados. Aunque se le llame «texto» pueden ser también datos binarios como imágenes, ejecutables, etc.
+* *Texto cifrado*: Es el texto plano después de pasar por el proceso de cifrado.
+* *Cifrado*: Es el proceso de codificar la información de tal forma que sólo pueda ser leída por terceros autorizados utilizando una clave de cifrado. Esos terceros usan el proceso contrario (descifrado) junto con la clave para acceder a los contenidos del mismo.
+* *Clave de cifrado*: Es una secuencia de caracteres que se utiliza para realizar el cifrado de los datos y sin la cual no es posible descifrarlos. Idealmente la clave debe permanecer secreta y ser conocida sólo por los comunicantes, aunque hay otras formas de realizar esto.
+* *Algoritmo de cifrado*: Son el par de algoritmos capaces de convertir el texto plano en texto cifrado y viceversa utilizando una o varias claves de cifrado.
+
+== Herramientas
+
+=== Criptografía Simétrica
+
+Esta técnica consiste en tomar el *_texto plano_* y aplicarle un función F que lo modifica, ademas esta funcion recibe la *_clave de cifrado_* generando el *_texto cifrado_*. Luego el receptor al recibir el *_texto cifrado_* aplica la inversa de la función F con la misma *_clave de cifrado_* para volver a obtener el *_texto plano_*. +
+El mayor problema radica en que ambas partes de la comunicación deben compartir la misma *_clave de cifrado_*. +
+Algunos algoritmos son Caesar, DES, AES, TripleDES.
+
+=== Criptografía Asimétrica
+
+=== Hashing
