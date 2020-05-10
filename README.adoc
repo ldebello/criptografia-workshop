@@ -23,10 +23,28 @@ toc::[]
 
 === Criptografía Simétrica
 
-Esta técnica consiste en tomar el *_texto plano_* y aplicarle un función F que lo modifica, ademas esta funcion recibe la *_clave de cifrado_* generando el *_texto cifrado_*. Luego el receptor al recibir el *_texto cifrado_* aplica la inversa de la función F con la misma *_clave de cifrado_* para volver a obtener el *_texto plano_*. +
-El mayor problema radica en que ambas partes de la comunicación deben compartir la misma *_clave de cifrado_*. +
-Algunos algoritmos son Caesar, DES, AES, TripleDES.
+Esta técnica consiste en tomar el *_texto plano_* y aplicarle un función F que lo modifica, ademas esta funcion recibe la *_clave de cifrado_* generando el *_texto cifrado_*. Luego el receptor al recibir el *_texto cifrado_* aplica la inversa de la función F con la misma *_clave de cifrado_* para volver a obtener el *_texto plano_*.
+
+El mayor problema radica en que ambas partes de la comunicación deben compartir la misma *_clave de cifrado_*.
+
+==== Algoritmos
+
+* Block Cipher: La transformacion se aplica sobre bloques de _n_ bits sobre el mensaje. Estos bloques tienen longitud fija por lo cual en algunos casos es necesario agregar _padding_.
+
+* Stream Cipher: La transformacion se aplica sobre cada bit del mensaje.
+
+==== Modos de operación
+
+Los modos *_Electronic Code-Block (link:images/ECB.png[ECB])_* y *_Cipher-Block Chaining (link:images/CBC.png[CBC])_* trabajan sobre bloques estrictamente, por lo cual en algunos casos se agregara _padding_. *_ECB_* Es el mas sencillo, donde el mensaje se divide en bloques y cada uno de ellos es cifrado por separado usando la misma clave K. *_CBC_* aplica a cada bloque la operación XOR utilizando el bloque anterior, para el primer bloque se utiliza un vector de inicializacion (IV).
+
+Los modos *_Cipher FeedBack (link:images/CFB.png[CFB])_*, *_Output Feedback (link:images/OFB.png[OFB])_* y *_CounTeR (link:images/CTR.png[CTR])_* convierten los algoritmos en bloques a uno de flujos. En estos modos lo que se encripta es la clava K junto con el IV o algun _nonce_ y su _counter_.
+
+Generalmente se recomienda utilizar los modos CBC o CTR.
 
 === Criptografía Asimétrica
 
 === Hashing
+
+== Referencias
+
+1. http://www.crypto-it.net/eng/[Crypto-IT]
